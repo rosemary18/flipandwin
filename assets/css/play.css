@@ -1,0 +1,222 @@
+html, body {
+    min-height: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+body {
+    background-image: url('/assets/images/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 10%;
+    background-attachment: fixed;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    box-shadow:  10px 10px 30px #33333388;
+    padding: 16;
+    border-radius: 12px;
+    min-height: 80px;
+    margin: 100px;
+    margin-top: 50px;
+    padding: 12px;
+}
+
+.item {
+    display: block;
+    background-color: aqua;
+    border-radius: 6px;
+    padding: 8px 6px;
+    margin: 4px 0px;
+}
+
+.container {
+    margin: auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 70px repeat(auto-fill, 70px) 70px;
+    padding: 8px;
+    justify-content: space-between;
+    gap: 4px;
+}
+
+.grid-item {
+    margin: auto;
+}
+
+.flip-card {
+    position: relative;
+    display: inline-flex;
+    width: 65px;
+    height: 65px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    margin: 4px;
+}
+
+.flip-card input {
+    display: none;
+}
+
+.flip-card #card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all .5s ease-in-out;
+    z-index: 1;
+}
+
+.flip-card #card div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+}
+
+.flip-card #front {
+    background-image: linear-gradient(#3252a8, #2A2A72);
+}
+
+.flip-card #back {
+    background-image: linear-gradient(#3252a8, #2A2A72);
+    transform: rotateY(180deg);   
+    font-weight: bold;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.flip-card:hover #card {
+    transform: rotateX(15deg) rotateY(-15deg);
+	box-shadow: 0 20px 20px rgba(50, 60, 60, 0.2);
+}
+
+.flip-card :checked + #card {
+    transform: rotateY(180deg) scale(.9);
+    box-shadow: 0 20px 20px rgba(50, 60, 60, 0.2);
+}
+
+#header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .33);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transition: 2s ease;
+}
+
+.top-gradient {
+    position: fixed;
+    z-index: -9999;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 50vh;
+    background-image: linear-gradient(white, white, rgba(0, 0, 0, 0));
+}
+
+.modal {
+    position: relative;
+    background-color: #e3e3e3;
+    border-radius: 10px;
+    transition: .5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 24px 28px;
+    margin: 24px;
+}
+
+.btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px 11px;
+    border-radius: 100px;
+    border: 0;
+    margin: 4px;
+    background-image: linear-gradient(#00d4ff, #2727c8);
+    color: white;
+}
+
+.text-info {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0px;
+    margin-top: 8px;
+}
+
+.text-prize {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 18px;
+    margin-bottom: 30px;
+}
+
+.img-event {
+    display: flex;
+    align-self: center;
+    margin: auto;
+    margin-top: 24px;
+}
+
+.input-name {
+    border: 0;
+    min-width: 300px;
+    outline: none;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: .9rem;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background: #e3e3e3;
+    box-shadow:  10px 10px 20px #c1c1c1, -10px -10px 20px #ffffff;
+}
+
+.rotate {
+    position: relative;
+    animation: rotation .5s ease-out 0s 3 forwards ;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
