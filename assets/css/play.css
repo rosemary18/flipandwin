@@ -38,8 +38,8 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto;
-    /* grid-template-columns: 70px repeat(auto-fill, 70px) 70px; */
+    /* grid-template-columns: auto auto auto auto auto auto auto; */
+    grid-template-columns: 70px repeat(auto-fill, 70px) 70px;
     padding: 8px;
     justify-content: space-between;
     gap: 4px;
