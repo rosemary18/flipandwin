@@ -15,19 +15,18 @@ body {
 .content {
     display: flex;
     flex-direction: column;
-    background: white;
-    box-shadow:  10px 10px 30px #33333388;
+    background: #f5f5f5;
+    box-shadow:  10px 10px 100px #33333388;
     padding: 16;
     border-radius: 12px;
     min-height: 80px;
     margin: 100px;
     margin-top: 50px;
-    padding: 12px;
+    padding: 8px;
 }
 
 .item {
     display: block;
-    background-color: aqua;
     border-radius: 6px;
     padding: 8px 6px;
     margin: 4px 0px;
@@ -39,7 +38,8 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 70px repeat(auto-fill, 70px) 70px;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    /* grid-template-columns: 70px repeat(auto-fill, 70px) 70px; */
     padding: 8px;
     justify-content: space-between;
     gap: 4px;
@@ -82,28 +82,33 @@ body {
     width: 100%;
     backface-visibility: hidden;
     border-radius: 8px;
+    box-shadow:  2px 2px 16px #d5d5d5, 0px 0px 8px #ffffff;
 }
 
 .flip-card #front {
     background-image: linear-gradient(#3252a8, #2A2A72);
 }
 
+.flip-card #front-white {
+    background: #fafafa;
+}
+
 .flip-card #back {
     background-image: linear-gradient(#3252a8, #2A2A72);
+    transform: rotateY(180deg);  
+}
+
+.flip-card #back-white {
+    /* background: #fafafa; */
     transform: rotateY(180deg);   
-    font-weight: bold;
-    color: white;
-    font-size: 1.5rem;
 }
 
 .flip-card:hover #card {
     transform: rotateX(15deg) rotateY(-15deg);
-	box-shadow: 0 20px 20px rgba(50, 60, 60, 0.2);
 }
 
 .flip-card :checked + #card {
     transform: rotateY(180deg) scale(.9);
-    box-shadow: 0 20px 20px rgba(50, 60, 60, 0.2);
 }
 
 #header {
@@ -139,8 +144,8 @@ body {
     top: 0;
     right: 0;
     left: 0;
-    height: 50vh;
-    background-image: linear-gradient(white, white, rgba(0, 0, 0, 0));
+    height: 35vh;
+    background-image: linear-gradient(white, rgba(0, 0, 0, 0));
 }
 
 .modal {
@@ -183,7 +188,7 @@ body {
     font-weight: bold;
     text-align: center;
     margin-top: 18px;
-    margin-bottom: 30px;
+    margin-bottom: 12px;
 }
 
 .img-event {
