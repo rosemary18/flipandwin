@@ -96,11 +96,16 @@ body {
 .flip-card #back {
     background-image: linear-gradient(#3252a8, #2A2A72);
     transform: rotateY(180deg);  
+    font-size: .8rem;
+    color: white;
+    font-size: bold;
 }
 
 .flip-card #back-white {
-    /* background: #fafafa; */
-    transform: rotateY(180deg);   
+    transform: rotateY(180deg); 
+    font-size: .8rem;
+    color: #2A2A72;
+    font-size: bold;  
 }
 
 .flip-card:hover #card {
