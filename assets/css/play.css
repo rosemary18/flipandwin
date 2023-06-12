@@ -7,7 +7,7 @@ html, body {
 
 
 body {
-    background: url('/assets/images/background.png') no-repeat center center fixed;
+    background: url('https://rosemary18.github.io/flipandwin/assets/images/background.png') no-repeat center center fixed;
     background-size: contain;
     display: flex;
     flex-direction: column;
