@@ -7,17 +7,20 @@ html, body {
 
 
 body {
-    background: url('https://rosemary18.github.io/flipandwin/assets/images/background.png') no-repeat center center fixed;
-    background-size: contain;
+    background: url('https://rosemary18.github.io/flipandwin/assets/images/background.png') no-repeat fixed;
+    background-size: 100%;
     display: flex;
     flex-direction: column;
 }
 
 #spacer {
+    position: relative;
     height: 55rem;
 }
 
 #root {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 3%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 3%);
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -46,14 +49,17 @@ body {
     margin: 4px 0px;
 }
 
+
+
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto;
     /* grid-template-columns: 55px repeat(auto-fill, 55px) 55px; */
     padding: 4px;
     /* justify-content: space-between; */
     gap: 2px;
-    /* margin: auto; */
+    margin: auto 2em;
+    padding-bottom: 3em;
 }
 
 .grid-item {
@@ -70,6 +76,7 @@ body {
     transform-style: preserve-3d;
     perspective: 1000px;
     margin: 1em;
+
 }
 
 .flip-card input {
@@ -283,3 +290,32 @@ body {
     height: 100vh;
     object-fit: cover;
 }
+
+.overflow-scroll-gradient {
+    position: relative;
+  }
+  .overflow-scroll-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 300px;
+    height: 25px;
+    background: linear-gradient(white, rgba(255, 255, 255, 0.001)); /* transparent keyword is broken in Safari */
+  }
+  .overflow-scroll-gradient::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 300px;
+    height: 25px;
+    background: linear-gradient(rgba(255, 255, 255, 0.001), white); /* transparent keyword is broken in Safari */
+  }
+  .overflow-scroll-gradient__scroller {
+    overflow-y: scroll;
+    background: white;
+    width: 300px;
+    height: 150px;
+    padding: 15px 0;
+    line-height: 1.2;
+    text-align: center;
+  }
